@@ -462,6 +462,32 @@ Create WORKFLOW.md in the project root — a reusable master playbook documentin
 Also create NICHE_WORKSHEET.md as a standalone fill-in-the-blank document for the niche configuration.
 ~~~
 
+### Prompt 9 — Production Hardening
+
+**What this builds:** Six production improvements: topic diversity cap, duplicate detection, medical disclaimer, API retry with backoff, token cost logging, and a draft preview command.
+
+**Paste this into Claude Code:**
+
+~~~text
+Add six production-hardening improvements to ContentEngine:
+
+1. Topic diversity cap — modify pipeline/scorer.py to group topics by condition category (ACL, running, shoulder, knee, dry needling, back, return to sport, general) and cap at 2 per category. Add a "category" field to each topic dict and print a diversity summary.
+
+2. Duplicate detection — create db/published_history.py with load_history(), is_duplicate() (>60% title word overlap OR exact primary_keyword match), and add_to_history(). Wire into scorer to filter before scoring, and into pipeline to record after generation.
+
+3. Medical disclaimer — add to draft_agent.py system prompt requiring this exact blockquote at the end of every post: "Medical disclaimer: This content is for informational purposes only..."
+
+4. API retry with backoff — create pipeline/api.py with a shared call_claude() function wrapping all three agents. Retry up to 3 times on RateLimitError (5s base), APITimeoutError (3s base), and APIError (2s base) with exponential backoff.
+
+5. Token cost logging — track input/output tokens per agent call, print per-agent breakdown after each generation, log to pipeline.log with slug and cost. Update schedule.py to sum total API cost across the run.
+
+6. Preview command — add `python run.py preview --slug [slug]` that renders a draft to HTML at drafts/preview/[slug].html with status badge (color-coded), metadata bar, full post, and SEO notes as a visible yellow "Editor Notes" panel. Opens in browser.
+
+Run syntax checks on all modified files.
+~~~
+
+---
+
 ## Testing Checklist
 
 Run these in order after completing all prompts:

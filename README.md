@@ -62,6 +62,7 @@ The `schedule.py` script runs scrape, score, and generate in sequence and logs r
 | `python run.py publish` | `--slug [slug]` | Publish a specific APPROVED draft to CMS. |
 | | `--approve-and-publish [slug]` | Approve then immediately publish a draft. |
 | | `--all` | Publish all APPROVED drafts (3s pause between each). |
+| `python run.py preview` | `--slug [slug]` | Render a draft to HTML and open in browser with status badge and editor notes. |
 | `python schedule.py` | | Run the full weekly pipeline (scrape + score + generate top 3). |
 
 ## Adding Competitor Sites

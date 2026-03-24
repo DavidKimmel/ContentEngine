@@ -6,19 +6,11 @@ import json
 from pathlib import Path
 from typing import Any
 
-import yaml
-from anthropic import Anthropic
 from dotenv import load_dotenv
 
+from pipeline.api import call_claude
+
 load_dotenv(Path(__file__).resolve().parents[1] / ".env")
-
-_CONFIG_PATH = Path(__file__).resolve().parents[1] / "config.yaml"
-_MODEL = "claude-sonnet-4-20250514"
-
-
-def _load_config() -> dict[str, Any]:
-    with open(_CONFIG_PATH, "r", encoding="utf-8") as fh:
-        return yaml.safe_load(fh)
 
 
 _SYSTEM_PROMPT = """You are an SEO specialist reviewing a physical therapy blog post for a boutique sports PT clinic in Northern Virginia (Resurgent Sports Rehab).
@@ -60,8 +52,6 @@ def optimize_seo(draft: str, outline: dict[str, Any]) -> dict[str, Any]:
         draft=draft,
     )
 
-    client = Anthropic()
-
     for attempt in range(2):
         prompt = user_msg
         if attempt == 1:
@@ -71,14 +61,9 @@ def optimize_seo(draft: str, outline: dict[str, Any]) -> dict[str, Any]:
                 "no backticks, no explanation text before or after."
             )
 
-        response = client.messages.create(
-            model=_MODEL,
-            max_tokens=1500,
-            system=_SYSTEM_PROMPT,
-            messages=[{"role": "user", "content": prompt}],
+        text = call_claude(
+            system=_SYSTEM_PROMPT, user_message=prompt, max_tokens=1500
         )
-
-        text = response.content[0].text.strip()
 
         if text.startswith("```"):
             text = text.split("\n", 1)[1] if "\n" in text else text[3:]

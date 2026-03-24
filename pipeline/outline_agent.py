@@ -7,13 +7,13 @@ from pathlib import Path
 from typing import Any
 
 import yaml
-from anthropic import Anthropic
 from dotenv import load_dotenv
+
+from pipeline.api import call_claude
 
 load_dotenv(Path(__file__).resolve().parents[1] / ".env")
 
 _CONFIG_PATH = Path(__file__).resolve().parents[1] / "config.yaml"
-_MODEL = "claude-sonnet-4-20250514"
 
 
 def _load_config() -> dict[str, Any]:
@@ -89,8 +89,6 @@ def generate_outline(topic: dict[str, Any]) -> dict[str, Any]:
         doi=topic.get("doi", ""),
     )
 
-    client = Anthropic()
-
     for attempt in range(2):
         prompt = user_msg
         if attempt == 1:
@@ -100,14 +98,7 @@ def generate_outline(topic: dict[str, Any]) -> dict[str, Any]:
                 "no backticks, no explanation text before or after."
             )
 
-        response = client.messages.create(
-            model=_MODEL,
-            max_tokens=2000,
-            system=system,
-            messages=[{"role": "user", "content": prompt}],
-        )
-
-        text = response.content[0].text.strip()
+        text = call_claude(system=system, user_message=prompt, max_tokens=2000)
 
         # Strip markdown fencing if present despite instructions
         if text.startswith("```"):

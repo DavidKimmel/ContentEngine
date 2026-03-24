@@ -7,13 +7,13 @@ from pathlib import Path
 from typing import Any
 
 import yaml
-from anthropic import Anthropic
 from dotenv import load_dotenv
+
+from pipeline.api import call_claude
 
 load_dotenv(Path(__file__).resolve().parents[1] / ".env")
 
 _CONFIG_PATH = Path(__file__).resolve().parents[1] / "config.yaml"
-_MODEL = "claude-sonnet-4-20250514"
 
 
 def _load_config() -> dict[str, Any]:
@@ -45,7 +45,13 @@ Strict rules:
 - Naturally weave in one or two mentions of {name}'s relevant differentiators where they genuinely fit. Never force them.
 
 {name} differentiators for reference:
-{differentiators}"""
+{differentiators}
+
+Every post must end with this exact disclaimer as a Markdown blockquote, after the CTA section and before the SOURCES:
+
+> **Medical disclaimer:** This content is for informational purposes only and does not constitute medical advice, diagnosis, or treatment. Always consult a licensed physical therapist or qualified healthcare provider before beginning any exercise or rehabilitation program. If you are experiencing pain or injury, seek professional evaluation promptly.
+
+Do not paraphrase or shorten the disclaimer. Use it verbatim every time."""
 
 
 _USER_TEMPLATE = """Write the complete blog post based on this outline:
@@ -69,13 +75,4 @@ def generate_draft(topic: dict[str, Any], outline: dict[str, Any]) -> str:
         url=topic.get("url", ""),
     )
 
-    client = Anthropic()
-
-    response = client.messages.create(
-        model=_MODEL,
-        max_tokens=4096,
-        system=system,
-        messages=[{"role": "user", "content": user_msg}],
-    )
-
-    return response.content[0].text.strip()
+    return call_claude(system=system, user_message=user_msg, max_tokens=4096)

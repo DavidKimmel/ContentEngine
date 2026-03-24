@@ -36,6 +36,7 @@ def main() -> None:
     scored_count = 0
     generated_count = 0
     pending_count = 0
+    total_api_cost = 0.0
 
     # --- Step 1: Scrape ---
     console.print("[bold blue]Step 1/3: Scraping...[/bold blue]")
@@ -74,6 +75,7 @@ def main() -> None:
     console.print("[bold blue]Step 3/3: Generating drafts...[/bold blue]")
     try:
         from pipeline import run_pipeline
+        from pipeline.api import get_usage, reset_usage
 
         queue_path = _DB_DIR / "scored_queue.json"
         if queue_path.exists():
@@ -92,9 +94,11 @@ def main() -> None:
                 console.print(
                     f"\n  [cyan]Generating [{idx}]:[/cyan] {topic['title'][:60]}"
                 )
+                reset_usage()
                 filepath = run_pipeline(topic)
                 if filepath:
                     generated_count += 1
+                    total_api_cost += get_usage().estimated_cost_usd
                     all_topics[idx]["status"] = "generated"
                     all_topics[idx]["draft_path"] = filepath
                     queue_data["topics"] = all_topics
@@ -127,6 +131,7 @@ def main() -> None:
     console.print(f"  Topics scored and queued: {scored_count}")
     console.print(f"  New drafts generated:    {generated_count}")
     console.print(f"  Drafts pending review:   {pending_count}")
+    console.print(f"  Total API cost:          ${total_api_cost:.4f}")
     console.print(f"  Time elapsed:            {elapsed}s\n")
 
     # --- Log ---
@@ -135,7 +140,7 @@ def main() -> None:
         f"[{now.strftime('%Y-%m-%d %H:%M:%S')}] RUN COMPLETE | "
         f"scraped={scraped_count} scored={scored_count} "
         f"generated={generated_count} pending={pending_count} "
-        f"elapsed={elapsed}s\n"
+        f"api_cost=${total_api_cost:.4f} elapsed={elapsed}s\n"
     )
     log_path = _LOGS_DIR / "pipeline.log"
     with open(log_path, "a", encoding="utf-8") as fh:

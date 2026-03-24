@@ -145,6 +145,78 @@ def _deduplicate(topics: list[dict[str, Any]]) -> list[dict[str, Any]]:
 
 
 # ---------------------------------------------------------------------------
+# Diversity cap
+# ---------------------------------------------------------------------------
+
+_CATEGORY_KEYWORDS: dict[str, list[str]] = {
+    "ACL": ["acl", "anterior cruciate", "cruciate ligament"],
+    "running": ["running", "gait", "biomechanics", "runner"],
+    "shoulder": ["shoulder", "rotator", "cuff"],
+    "knee": ["knee", "patella", "meniscus", "patellar"],
+    "dry needling": ["dry needling", "trigger point", "needling"],
+    "back": ["lumbar", "spine", "back pain", "spinal"],
+    "return to sport": ["return to sport", "rts", "return-to-sport"],
+}
+
+
+def _classify_category(title: str) -> str:
+    """Return the category for a title, or 'general' if no match."""
+    title_lower = title.lower()
+    for category, kws in _CATEGORY_KEYWORDS.items():
+        if any(kw in title_lower for kw in kws):
+            return category
+    return "general"
+
+
+def _enforce_diversity(
+    topics: list[dict[str, Any]], max_per_category: int = 2
+) -> list[dict[str, Any]]:
+    """Cap topics to max_per_category per condition/theme category.
+
+    Adds a 'category' field to each topic dict.
+    Keeps top entries by total_score within each capped category.
+    Prints a rich summary of topics per category.
+    """
+    from rich.console import Console
+    from rich.table import Table
+
+    # Classify and group
+    for t in topics:
+        t["category"] = _classify_category(t.get("title", ""))
+
+    category_buckets: dict[str, list[dict[str, Any]]] = {}
+    for t in topics:
+        category_buckets.setdefault(t["category"], []).append(t)
+
+    # Cap each category (already sorted by score from earlier step)
+    result: list[dict[str, Any]] = []
+    for cat, items in category_buckets.items():
+        if cat == "general":
+            result.extend(items)
+        else:
+            result.extend(items[:max_per_category])
+
+    # Re-sort by total_score
+    result.sort(key=lambda x: x["total_score"], reverse=True)
+
+    # Print summary
+    console = Console()
+    table = Table(title="Diversity Summary")
+    table.add_column("Category", style="cyan")
+    table.add_column("Available", justify="right")
+    table.add_column("Kept", justify="right", style="bold green")
+
+    for cat in sorted(category_buckets.keys()):
+        available = len(category_buckets[cat])
+        kept = len([t for t in result if t["category"] == cat])
+        table.add_row(cat, str(available), str(kept))
+
+    console.print(table)
+
+    return result
+
+
+# ---------------------------------------------------------------------------
 # Public API
 # ---------------------------------------------------------------------------
 
@@ -155,10 +227,26 @@ def score_topics(topics: list[dict[str, Any]]) -> list[dict[str, Any]]:
     Returns topics sorted by total_score descending, filtered to those
     meeting the minimum score threshold from config.
     """
+    from rich.console import Console
+
+    from db.published_history import is_duplicate, load_history
+
+    console = Console()
     cfg = _load_config()
     keywords: list[str] = cfg.get("pt_keywords", [])
     gaps: list[str] = cfg.get("content_gaps", [])
     min_score: float = cfg.get("settings", {}).get("min_score_to_generate", 60.0)
+
+    # Filter out duplicates of previously published topics
+    history = load_history()
+    if history:
+        before = len(topics)
+        topics = [t for t in topics if not is_duplicate(t, history)]
+        skipped = before - len(topics)
+        if skipped:
+            console.print(
+                f"[yellow]  Skipped {skipped} topics matching published history[/yellow]"
+            )
 
     scored: list[dict[str, Any]] = []
     for t in topics:
@@ -188,6 +276,9 @@ def score_topics(topics: list[dict[str, Any]]) -> list[dict[str, Any]]:
 
     # Filter by minimum score
     qualified = [t for t in deduped if t["total_score"] >= min_score]
+
+    # Diversity cap: max 2 topics per category
+    qualified = _enforce_diversity(qualified, max_per_category=2)
 
     return qualified
 
