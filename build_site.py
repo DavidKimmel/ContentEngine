@@ -21,7 +21,7 @@ _FM_RE = re.compile(r"^---\s*\n(.*?)\n---\s*\n(.*)", re.DOTALL)
 # ---------------------------------------------------------------------------
 
 _BASE_CSS = """
-@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&family=Raleway:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&family=Raleway:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap');
 
 :root {
   --navy: #042b4e;
@@ -29,31 +29,35 @@ _BASE_CSS = """
   --orange: #eb5e28;
   --orange-hover: #d4511f;
   --blue: #096fc3;
-  --bg: #ffffff;
-  --bg-off: #f5f7fa;
-  --text: #1c1c1c;
-  --text-mid: #4a5568;
-  --text-light: #718096;
-  --border: #e2e8f0;
+  --bg: #f8f9fb;
+  --bg-off: #eef1f5;
+  --card-bg: #ffffff;
+  --text: #1a1a2e;
+  --text-mid: #3d4555;
+  --text-light: #5a6478;
+  --border: #d8dde6;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Source Sans 3', 'Raleway', sans-serif;
+  font-weight: 500;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.7;
+  line-height: 1.75;
   -webkit-font-smoothing: antialiased;
+  font-size: 16px;
 }
 
 /* ---- Header ---- */
 .site-header {
   background: #fff;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 2px solid var(--border);
   position: sticky;
   top: 0;
   z-index: 100;
+  box-shadow: 0 1px 4px rgba(4,43,78,0.06);
 }
 
 .header-inner {
@@ -172,15 +176,16 @@ nav .cta-btn:hover { background: var(--orange-hover); color: #fff; }
 }
 
 .post-card {
-  background: #fff;
+  background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: 6px;
   overflow: hidden;
+  box-shadow: 0 1px 3px rgba(4,43,78,0.04);
   transition: box-shadow 0.25s, transform 0.25s;
 }
 
 .post-card:hover {
-  box-shadow: 0 8px 30px rgba(4,43,78,0.1);
+  box-shadow: 0 8px 30px rgba(4,43,78,0.12);
   transform: translateY(-2px);
 }
 
@@ -227,9 +232,10 @@ nav .cta-btn:hover { background: var(--orange-hover); color: #fff; }
 .card-body h2 a:hover { color: var(--blue); }
 
 .card-body p {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
+  font-weight: 500;
   color: var(--text-mid);
-  line-height: 1.6;
+  line-height: 1.65;
   margin-bottom: 1.2rem;
 }
 
@@ -299,34 +305,40 @@ nav .cta-btn:hover { background: var(--orange-hover); color: #fff; }
 .article-meta span { display: flex; align-items: center; gap: 0.3rem; }
 
 .article-body {
-  max-width: 760px;
+  max-width: 720px;
   margin: 0 auto;
   padding: 2.5rem 2rem 4rem;
+  background: var(--card-bg);
+  margin-top: -1.5rem;
+  border-radius: 8px 8px 0 0;
+  position: relative;
+  box-shadow: 0 0 20px rgba(4,43,78,0.05);
 }
 
 .article-body h2 {
   font-family: 'Bitter', serif;
-  font-size: 1.5rem;
+  font-size: 1.45rem;
   font-weight: 700;
   color: var(--navy);
   margin: 2.5rem 0 0.8rem;
-  padding-bottom: 0.4rem;
-  border-bottom: 2px solid var(--border);
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--bg-off);
 }
 
 .article-body h3 {
   font-family: 'Bitter', serif;
-  font-size: 1.15rem;
+  font-size: 1.12rem;
   font-weight: 700;
   color: var(--navy-light);
   margin: 1.8rem 0 0.6rem;
 }
 
 .article-body p {
-  margin-bottom: 1.1rem;
-  font-size: 1.02rem;
-  color: var(--text);
-  line-height: 1.8;
+  margin-bottom: 1.2rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--text-mid);
+  line-height: 1.85;
 }
 
 .article-body ul, .article-body ol {
@@ -334,20 +346,23 @@ nav .cta-btn:hover { background: var(--orange-hover); color: #fff; }
 }
 
 .article-body li {
-  margin-bottom: 0.4rem;
-  font-size: 1.02rem;
-  line-height: 1.7;
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.75;
+  color: var(--text-mid);
 }
 
-.article-body strong { color: var(--navy); }
+.article-body strong { color: var(--navy); font-weight: 700; }
 
 .article-body blockquote {
   border-left: 3px solid var(--orange);
-  padding: 0.8rem 1.2rem;
+  padding: 1rem 1.4rem;
   margin: 1.5rem 0;
   background: var(--bg-off);
   font-style: italic;
   color: var(--text-mid);
+  border-radius: 0 4px 4px 0;
 }
 
 /* ---- Footer ---- */
