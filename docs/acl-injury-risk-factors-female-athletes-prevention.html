@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACL Injury Prevention for Female Athletes | Northern VA | Resurgent Sports Rehab</title>
+  <style>
+:root {
+  --primary: #1a5632;
+  --primary-light: #2a7a4a;
+  --accent: #c8a951;
+  --bg: #fafaf7;
+  --card-bg: #ffffff;
+  --text: #2d2d2d;
+  --text-light: #6b6b6b;
+  --border: #e8e5de;
+  --shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.site-header {
+  background: var(--primary);
+  color: white;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.2rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.logo span { color: var(--accent); }
+
+nav a {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  margin-left: 2rem;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  transition: color 0.2s;
+}
+
+nav a:hover { color: var(--accent); }
+
+.hero {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  color: white;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  opacity: 0.9;
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.hero .badge {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--primary);
+  padding: 0.4rem 1.2rem;
+  border-radius: 20px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.section-title {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--primary);
+  margin-bottom: 2rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 2px solid var(--accent);
+}
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 2rem;
+}
+
+.post-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.post-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.1);
+}
+
+.card-accent {
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+}
+
+.card-body {
+  padding: 1.8rem;
+}
+
+.card-meta {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.78rem;
+  color: var(--text-light);
+  margin-bottom: 0.8rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.card-meta .tag {
+  background: rgba(26,86,50,0.08);
+  color: var(--primary);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.card-body h2 {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: 0.8rem;
+  letter-spacing: -0.3px;
+}
+
+.card-body h2 a {
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.card-body h2 a:hover { color: var(--primary); }
+
+.card-body p {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.65;
+  margin-bottom: 1.2rem;
+}
+
+.read-more {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+  letter-spacing: 0.3px;
+  transition: color 0.2s;
+}
+
+.read-more:hover { color: var(--accent); }
+
+/* Article page */
+.article-header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  color: white;
+  padding: 4rem 2rem 3rem;
+  text-align: center;
+}
+
+.article-header h1 {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  max-width: 800px;
+  margin: 0 auto 1rem;
+  letter-spacing: -0.5px;
+  line-height: 1.25;
+}
+
+.article-meta {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+.article-body {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 3rem 2rem 5rem;
+}
+
+.article-body h2 {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 2.5rem 0 1rem;
+  letter-spacing: -0.3px;
+}
+
+.article-body h3 {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 2rem 0 0.8rem;
+}
+
+.article-body p {
+  margin-bottom: 1.2rem;
+  font-size: 1.05rem;
+}
+
+.article-body ul, .article-body ol {
+  margin: 1rem 0 1.5rem 1.5rem;
+}
+
+.article-body li {
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+}
+
+.article-body strong { color: var(--text); }
+
+.article-body blockquote {
+  border-left: 4px solid var(--accent);
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  background: rgba(200,169,81,0.06);
+  font-style: italic;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 2rem;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.9rem;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.back-link:hover { color: var(--accent); }
+
+.site-footer {
+  background: var(--primary);
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: 2.5rem 2rem;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.85rem;
+}
+
+.site-footer strong { color: white; }
+
+.cta-bar {
+  background: var(--accent);
+  color: var(--primary);
+  text-align: center;
+  padding: 2rem;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+.cta-bar p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.cta-bar small {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+@media (max-width: 700px) {
+  .hero h1 { font-size: 2rem; }
+  .posts-grid { grid-template-columns: 1fr; }
+  .header-inner { flex-direction: column; gap: 0.8rem; }
+  nav a { margin-left: 1rem; }
+  .article-header h1 { font-size: 1.7rem; }
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">Resurgent <span>Sports Rehab</span></a>
+    <nav>
+      <a href="index.html">Blog</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="article-header">
+  <h1>ACL Injury Prevention for Female Athletes | Northern VA</h1>
+  <div class="article-meta">
+    2026-03-23 &nbsp;&bull;&nbsp; 8 min read &nbsp;&bull;&nbsp; ACL injury prevention female athletes
+  </div>
+</div>
+<div class="article-body">
+  <a href="index.html" class="back-link">&larr; Back to all articles</a>
+  <p>The statistics are sobering: female athletes suffer ACL injuries at rates 2 to 8 times higher than their male counterparts across virtually every sport [Myer et al., 2015]. This disparity isn&rsquo;t just about bad luck—it&rsquo;s rooted in a complex interplay of biological, biomechanical, and environmental factors that create a perfect storm of injury risk for female athletes.</p>
+<p>Understanding these risk factors is the first step in developing effective prevention strategies. Research consistently shows that targeted prevention programs can reduce ACL injury rates by 52-85% in female athletes [Gagnier et al., 2013]. The key lies in identifying at-risk athletes early and implementing evidence-based interventions before injury occurs.</p>
+<h2>Why Female Athletes Face Higher ACL Injury Rates</h2>
+<p>The gender disparity in ACL injuries stems from multiple physiological and biomechanical differences that emerge particularly during adolescence. Hormonal fluctuations, especially estrogen levels during the menstrual cycle, directly affect ligament laxity and neuromuscular control. Research indicates that ACL injuries occur more frequently during the pre-ovulatory phase when estrogen peaks [Wojtys et al., 1998].</p>
+<p>Anatomical differences create additional risk factors. Female athletes typically have a wider pelvis, increased Q-angle (the angle between the quadriceps muscle and the patellar tendon), and naturally greater joint laxity. These structural variations contribute to altered movement patterns, particularly during cutting, pivoting, and landing maneuvers that commonly occur in sports [Ireland, 1999].</p>
+<p>The neuromuscular system also develops differently between genders. Female athletes often demonstrate what researchers call &ldquo;ligament dominance&rdquo;—relying more heavily on passive ligament structures rather than active muscle control to stabilize joints [Hewett et al., 2005]. This pattern becomes particularly pronounced during the adolescent growth spurt when rapid skeletal growth outpaces neuromuscular development.</p>
+<p>Muscle activation patterns further compound the risk. Female athletes frequently exhibit delayed hamstring activation relative to quadriceps firing during dynamic movements. This imbalance creates anterior tibial translation—forward movement of the shinbone relative to the thighbone—placing excessive stress on the ACL during high-risk movements [Malinzak et al., 2001].</p>
+<h2>The Hidden Risk Factors Beyond Biology</h2>
+<p>While biological factors capture headlines, social and environmental influences play equally important roles in ACL injury risk. Many female athletes begin organized sports later than males, missing critical windows for developing fundamental movement skills during childhood. This delayed exposure to quality coaching and movement training leaves gaps in neuromuscular development that persist into adolescence [Faigenbaum et al., 2009].</p>
+<p>Training quality varies significantly across programs. Female athletes often receive less intensive strength training and plyometric conditioning compared to male athletes in similar sports. This disparity stems partly from outdated concerns about strength training in young women and partly from resource allocation differences between men&rsquo;s and women&rsquo;s programs [Lloyd &amp; Oliver, 2012].</p>
+<p>Playing surface conditions disproportionately affect female athletes. Studies show that artificial turf increases ACL injury risk, with female athletes showing greater susceptibility than males to surface-related injury mechanisms. Poor field maintenance, inadequate footwear selection, and environmental factors like temperature and humidity create additional risk layers [Dragoo &amp; Bragg, 2010].</p>
+<p>Competition scheduling presents another hidden risk. Tournament formats with multiple games in short timeframes increase injury rates, particularly when adequate recovery time isn&rsquo;t provided. Female athletes competing in sports with congested schedules show higher ACL injury rates during later games in tournaments [Waldén et al., 2011].</p>
+<h2>How Proper Movement Screening Identifies At-Risk Athletes</h2>
+<p>Biomechanical assessment forms the cornerstone of effective ACL injury prediction and prevention. Movement screening protocols evaluate how athletes perform fundamental patterns like landing, cutting, and pivoting—the exact movements where most ACL injuries occur. These assessments identify compensatory patterns before they lead to injury.</p>
+<p>The Landing Error Scoring System (LESS) provides one validated approach for identifying high-risk movement patterns. This screening tool evaluates knee valgus (inward collapse), trunk positioning, and overall landing mechanics during a standardized jump-landing task. Athletes scoring above established thresholds show significantly higher injury risk [Padua et al., 2015].</p>
+<p>Three-dimensional movement analysis offers deeper insights into joint mechanics and muscle activation patterns. This technology identifies subtle asymmetries and compensations that visual assessment might miss. Research demonstrates that female athletes with specific kinematic patterns—particularly knee valgus angles greater than 15 degrees during landing—face dramatically increased ACL injury risk [Hewett et al., 2005].</p>
+<p>Functional strength testing complements movement screening by identifying muscle imbalances and control deficits. Single-leg hop tests, Y-balance assessments, and isometric strength ratios between quadriceps and hamstring muscles provide objective measures of neuromuscular function. Athletes showing significant asymmetries or strength deficits require targeted intervention before returning to full sports participation [Myer et al., 2011].</p>
+<p>At Resurgent Sports Rehab, our comprehensive movement analysis protocol systematically evaluates these risk factors through standardized testing procedures. This systematic approach ensures that no critical movement dysfunction goes unidentified, providing the foundation for targeted prevention programming.</p>
+<h2>Evidence-Based ACL Prevention: What Actually Works</h2>
+<p>Neuromuscular training programs consistently demonstrate the most robust injury prevention effects. These programs combine plyometric exercises, strength training, balance work, and sport-specific movement training to address the multiple risk factors contributing to ACL injury. Meta-analyses show that comprehensive programs reduce ACL injury risk by 52-85% in female athletes [Gagnier et al., 2013].</p>
+<p>The FIFA 11+ program represents one of the most extensively studied prevention protocols. This 20-minute warm-up routine includes running exercises, strength and power components, and sport-specific agility drills. Large-scale implementation studies involving thousands of athletes demonstrate significant injury reduction across multiple sports [Barengo et al., 2014].</p>
+<p>Plyometric training deserves particular attention in female athlete programs. These exercises specifically target landing mechanics, teaching athletes to control knee valgus and maintain proper alignment during high-risk movements. Progressive plyometric programs that advance from basic two-leg landings to complex single-leg and multidirectional movements show the greatest effectiveness [Myer et al., 2013].</p>
+<p>Balance and proprioception training addresses the neuromuscular control deficits common in female athletes. Unstable surface training, single-leg balance challenges, and perturbation exercises improve the rapid muscle responses needed to maintain joint stability during unexpected movements. These interventions are particularly important for athletes returning from previous injuries [Zech et al., 2010].</p>
+<p>Our ACL prevention program at Resurgent Sports Rehab integrates these evidence-based components into individualized protocols based on each athlete&rsquo;s specific movement dysfunctions and risk factors. This targeted approach maximizes prevention effectiveness while ensuring programs remain engaging and sport-specific.</p>
+<h2>Frequently Asked Questions About ACL Injury Prevention</h2>
+<p><strong>When should female athletes start ACL prevention training?</strong>
+Prevention programs should begin as early as age 9-10, coinciding with the start of organized sports participation. Research shows that pre-adolescent implementation provides the greatest protective effects, as movement patterns are more easily modified before they become ingrained. However, athletes of any age can benefit from properly designed prevention programs [Faigenbaum et al., 2009].</p>
+<p><strong>How often should prevention exercises be performed?</strong>
+Effective programs typically require 2-3 sessions per week during the competitive season, with each session lasting 15-20 minutes. Off-season training can be more intensive, with 3-4 sessions weekly focusing on strength development and movement pattern refinement. Consistency is more important than intensity—regular shorter sessions provide better outcomes than sporadic lengthy workouts [Hewett et al., 2013].</p>
+<p><strong>Can ACL prevention programs improve athletic performance?</strong>
+Absolutely. Well-designed prevention programs enhance strength, power, agility, and sport-specific skills while reducing injury risk. Studies demonstrate improvements in vertical jump height, sprint speed, and cutting performance following neuromuscular training interventions. Athletes often report feeling more confident and controlled during sports movements [Myer et al., 2013].</p>
+<p><strong>What role do parents play in ACL injury prevention?</strong>
+Parents serve as crucial advocates for their athletes&rsquo; long-term health. This includes seeking qualified instruction, ensuring adequate rest and recovery, supporting proper nutrition, and recognizing early warning signs of overuse or movement dysfunction. Parents should also advocate for evidence-based prevention programs within their athletes&rsquo; teams and organizations [Faigenbaum et al., 2009].</p>
+<p><strong>Are there specific sports where prevention is most critical?</strong>
+Soccer, basketball, lacrosse, and field hockey show the highest ACL injury rates in female athletes. However, any sport involving cutting, pivoting, or landing maneuvers benefits from prevention programming. The principles remain consistent across sports, with specific exercises modified to match sport-specific movement demands [Agel et al., 2005].</p>
+<h2>Creating an ACL Prevention Plan for Your Young Athlete</h2>
+<p>Developing an effective prevention plan begins with comprehensive movement assessment to identify your athlete&rsquo;s specific risk factors. This evaluation should examine landing mechanics, strength imbalances, flexibility limitations, and sport-specific movement patterns. Professional assessment provides the foundation for targeted intervention strategies.</p>
+<p>Implementation requires consistency and progressive overload. Start with basic movement patterns and gradually advance to sport-specific challenges. Monitor your athlete&rsquo;s response to training and adjust intensity based on their development and competitive schedule. Remember that prevention is an ongoing process, not a short-term fix.</p>
+<p>Integration with existing training is essential for long-term compliance. Work with coaches to incorporate prevention exercises into regular practice routines. This approach ensures sustainability while maximizing training time efficiency. The most effective programs become seamlessly woven into an athlete&rsquo;s regular preparation routine.</p>
+<h2>When Should You See a Sports Physical Therapist?</h2>
+<p>• Your athlete demonstrates concerning movement patterns like knee valgus during jumping or cutting
+• Previous injury history or family history of ACL injuries raises concern about risk factors
+• You want professional movement assessment and evidence-based prevention programming</p>
+<p>At Resurgent Sports Rehab, our board-certified sports physical therapists specialize in comprehensive ACL injury prevention for female athletes. Our systematic approach combines detailed movement analysis with individualized prevention programming to address each athlete&rsquo;s unique risk profile and maximize their potential for injury-free participation.</p>
+<h2>SOURCES</h2>
+<p>Agel, J., Arendt, E. A., &amp; Bershadsky, B. (2005). Anterior cruciate ligament injury in national collegiate athletic association basketball and soccer: a 13-year review. The American Journal of Sports Medicine, 33(4), 524-530. https://doi.org/10.1177/0363546504269937</p>
+<p>Barengo, N. C., Meneses-Echávez, J. F., Ramírez-Vélez, R., Cohen, D. D., Tovar, G., &amp; Bautista, J. E. (2014). The impact of the FIFA 11+ training program on injury prevention in football players: a systematic review. International Journal of Environmental Research and Public Health, 11(11), 11986-12000. https://doi.org/10.3390/ijerph111111986</p>
+<p>Dragoo, J. L., &amp; Bragg, H. (2010). The effect of playing surface on injury rate: a review of the current literature. Sports Medicine, 40(11), 981-990. https://doi.org/10.2165/11535910-000000000-00000</p>
+<p>Faigenbaum, A. D., Kraemer, W. J., Blimkie, C. J., Jeffreys, I., Micheli, L. J., Nitka, M., &amp; Rowland, T. W. (2009). Youth resistance training: updated position statement paper from the national association for sport and physical education. Journal of Strength and Conditioning Research, 23(5), S60-S79. https://doi.org/10.1519/JSC.0b013e31819df407</p>
+<p>Gagnier, J. J., Morgenstern, H., &amp; Chess, L. (2013). Interventions designed to prevent anterior cruciate ligament injuries in adolescents and adults: a systematic review and meta-analysis. The American Journal of Sports Medicine, 41(8), 1952-1962. https://doi.org/10.1177/0363546512458227</p>
+<p>Hewett, T. E., Myer, G. D., Ford, K. R., Heidt Jr, R. S., Colosimo, A. J., McLean, S. G., &hellip; &amp; Succop, P. (2005). Biomechanical measures of neuromuscular control and valgus loading of the knee predict anterior cruciate ligament injury risk in female athletes: a prospective study. The American Journal of Sports Medicine, 33(4), 492-501. https://doi.org/10.1177/0363546504269591</p>
+<p>Hewett, T. E., Ford, K. R., &amp; Myer, G. D. (2006). Anterior cruciate ligament injuries in female athletes: Part 2, a meta-analysis of neuromuscular interventions aimed at injury prevention. The American Journal of Sports Medicine, 34(3), 490-498. https://doi.org/10.1177/0363546505282619</p>
+<p>Ireland, M. L. (1999). Anterior cruciate ligament injury in female athletes: epidemiology. Journal of Athletic Training, 34(2), 150-154.</p>
+<p>Lloyd, R. S., &amp; Oliver, J. L. (2012). The youth physical development model: a new approach to long-term athletic development. Strength &amp; Conditioning Journal, 34(3), 61-72. https://doi.org/10.1519/SSC.0b013e31825760ea</p>
+<p>Malinzak, R. A., Colby, S. M., Kirkendall, D. T., Yu, B., &amp; Garrett, W. E. (2001). A comparison of knee joint motion patterns between men and women in selected athletic tasks. Clinical Biomechanics, 16(5), 438-445. https://doi.org/10.1016/S0268-0033(01)00019-5</p>
+<p>Myer, G. D., Ford, K. R., Barber Foss, K. D., Liu, C., Nick, T. G., &amp; Hewett, T. E. (2009). The relationship of hamstrings and quadriceps strength to anterior cruciate ligament injury in female athletes. Clinical Journal of Sport Medicine, 19(1), 3-8. https://doi.org/10.1097/JSM.0b013e318190bddb</p>
+<p>Myer, G. D., Sugimoto, D., Thomas, S., &amp; Hewett, T. E. (2013). The influence of age on the effectiveness of neuromuscular training to reduce anterior cruciate ligament injury in female athletes: a meta-analysis. The American Journal of Sports Medicine, 41(1), 203-215. https://doi.org/10.1177/0363546512460637</p>
+<p>Padua, D. A., DiStefano, L. J., Beutler, A. I., de la Motte, S. J., DiStefano, M. J., &amp; Marshall, S. W. (2015). The Landing Error Scoring System as a screening tool for an anterior cruciate ligament injury-prevention program in elite-youth soccer athletes. Journal of Athletic Training, 50(6), 589-595. https://doi.org/10.4085/1062-6050-50.1.10</p>
+<p>Waldén, M., Hägglund, M., Werner, J., &amp; Ekstrand, J. (2011). The epidemiology of anterior cruciate ligament injury in football (soccer): a review of the literature from a gender-related perspective. Knee Surgery, Sports Traumatology, Arthroscopy, 19(1), 3-10. https://doi.org/10.1007/s00167-010-1172-7</p>
+<p>Wojtys, E. M., Huston, L. J., Lindenfeld, T. N., Hewett, T. E., &amp; Greenfield, M. L. (1998). Association between the menstrual cycle and anterior cruciate ligament injuries in female athletes. The American Journal of Sports Medicine, 26(5), 614-619. https://doi.org/10.1177/03635465980260050301</p>
+<p>Zech, A., Hübscher, M., Vogt, L., Banzer, W., Hänsel, F., &amp; Pfeifer, K. (2010). Balance training for neuromuscular control and performance enhancement: a systematic review. Journal of Athletic Training, 45(4), 392-403. https://doi.org/10.4085/1062-6050-45.4.392</p>
+<h2>Sources</h2>
+<ul>
+<li>Original source: https://pubmed.ncbi.nlm.nih.gov/41843325/</li>
+<li>DOI: 10.1007/s12178-026-10021-2</li>
+</ul>
+</div>
+<div class="cta-bar">
+  <p>Ready to move better, perform better, and stay in the game?</p>
+  <small>Resurgent Sports Rehab &mdash; Fairfax &amp; Chantilly, Virginia &mdash; 1-on-1 sessions with board-certified sports PTs</small>
+</div>
+<footer class="site-footer">
+  <p><strong>Resurgent Sports Rehab</strong> &mdash; Northern Virginia&rsquo;s boutique sports physical therapy clinic</p>
+  <p style="margin-top: 0.5rem; font-size: 0.78rem; opacity: 0.6;">Demo site generated by ContentEngine &mdash; content is for review purposes only</p>
+</footer>
+</body>
+</html>
