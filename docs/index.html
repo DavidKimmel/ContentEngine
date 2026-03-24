@@ -5,455 +5,511 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog | Resurgent Sports Rehab</title>
   <style>
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&family=Raleway:wght@400;500;600;700&display=swap');
+
 :root {
-  --primary: #1a5632;
-  --primary-light: #2a7a4a;
-  --accent: #c8a951;
-  --bg: #fafaf7;
-  --card-bg: #ffffff;
-  --text: #2d2d2d;
-  --text-light: #6b6b6b;
-  --border: #e8e5de;
-  --shadow: 0 2px 12px rgba(0,0,0,0.06);
+  --navy: #042b4e;
+  --navy-light: #0a3d6b;
+  --orange: #eb5e28;
+  --orange-hover: #d4511f;
+  --blue: #096fc3;
+  --bg: #ffffff;
+  --bg-off: #f5f7fa;
+  --text: #1c1c1c;
+  --text-mid: #4a5568;
+  --text-light: #718096;
+  --border: #e2e8f0;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  font-family: 'Georgia', 'Times New Roman', serif;
+  font-family: 'Raleway', sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
 }
 
+/* ---- Header ---- */
 .site-header {
-  background: var(--primary);
-  color: white;
-  padding: 0;
+  background: #fff;
+  border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
 .header-inner {
-  max-width: 1100px;
+  max-width: 1120px;
   margin: 0 auto;
-  padding: 1.2rem 2rem;
+  padding: 1rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .logo {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 1.6rem;
+  font-family: 'Bitter', serif;
+  font-size: 1.35rem;
   font-weight: 700;
-  color: white;
+  color: var(--navy);
   text-decoration: none;
-  letter-spacing: -0.5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.logo span { color: var(--accent); }
+.logo span { color: var(--orange); }
+
+nav { display: flex; align-items: center; gap: 0.5rem; }
 
 nav a {
-  color: rgba(255,255,255,0.85);
+  color: var(--navy);
   text-decoration: none;
-  margin-left: 2rem;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 0.9rem;
-  font-weight: 500;
-  letter-spacing: 0.3px;
-  transition: color 0.2s;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
 }
 
-nav a:hover { color: var(--accent); }
+nav a:hover { background: var(--bg-off); color: var(--blue); }
 
+nav .cta-btn {
+  background: var(--orange);
+  color: #fff;
+  padding: 0.55rem 1.2rem;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+nav .cta-btn:hover { background: var(--orange-hover); color: #fff; }
+
+/* ---- Hero ---- */
 .hero {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  background: var(--navy);
   color: white;
-  padding: 5rem 2rem;
+  padding: 4.5rem 2rem 4rem;
   text-align: center;
 }
 
 .hero h1 {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 2.8rem;
+  font-family: 'Bitter', serif;
+  font-size: 2.6rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  letter-spacing: -1px;
 }
 
 .hero p {
-  font-size: 1.15rem;
-  opacity: 0.9;
-  max-width: 650px;
-  margin: 0 auto;
-  line-height: 1.8;
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.8);
+  max-width: 620px;
+  margin: 0 auto 2rem;
+  line-height: 1.75;
 }
 
-.hero .badge {
-  display: inline-block;
-  background: var(--accent);
-  color: var(--primary);
-  padding: 0.4rem 1.2rem;
-  border-radius: 20px;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  margin-bottom: 1.5rem;
+.hero .location-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--orange);
   text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
 }
 
+/* ---- Content ---- */
 .container {
-  max-width: 1100px;
+  max-width: 1120px;
   margin: 0 auto;
-  padding: 3rem 2rem;
+  padding: 3.5rem 2rem;
+}
+
+.section-label {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--blue);
+  margin-bottom: 0.5rem;
 }
 
 .section-title {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 1.1rem;
+  font-family: 'Bitter', serif;
+  font-size: 1.8rem;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: var(--primary);
-  margin-bottom: 2rem;
-  padding-bottom: 0.8rem;
-  border-bottom: 2px solid var(--accent);
+  color: var(--navy);
+  margin-bottom: 2.5rem;
 }
 
+/* ---- Posts Grid ---- */
 .posts-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  gap: 2rem;
+  gap: 1.8rem;
 }
 
 .post-card {
-  background: var(--card-bg);
+  background: #fff;
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 6px;
   overflow: hidden;
-  box-shadow: var(--shadow);
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: box-shadow 0.25s, transform 0.25s;
 }
 
 .post-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 24px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 30px rgba(4,43,78,0.1);
+  transform: translateY(-2px);
 }
 
-.card-accent {
-  height: 4px;
-  background: linear-gradient(90deg, var(--primary), var(--accent));
-}
-
-.card-body {
-  padding: 1.8rem;
-}
-
-.card-meta {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 0.78rem;
-  color: var(--text-light);
-  margin-bottom: 0.8rem;
+.card-top {
+  background: var(--navy);
+  padding: 1.2rem 1.5rem;
   display: flex;
-  gap: 1rem;
+  justify-content: space-between;
   align-items: center;
 }
 
-.card-meta .tag {
-  background: rgba(26,86,50,0.08);
-  color: var(--primary);
-  padding: 0.2rem 0.6rem;
-  border-radius: 4px;
-  font-weight: 600;
-  font-size: 0.72rem;
+.card-top .tag {
+  font-size: 0.68rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.8px;
+  color: var(--orange);
+}
+
+.card-top .date {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.6);
+}
+
+.card-body {
+  padding: 1.5rem;
 }
 
 .card-body h2 {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 1.25rem;
+  font-family: 'Bitter', serif;
+  font-size: 1.15rem;
   font-weight: 700;
-  line-height: 1.35;
-  margin-bottom: 0.8rem;
-  letter-spacing: -0.3px;
+  line-height: 1.4;
+  margin-bottom: 0.7rem;
+  color: var(--navy);
 }
 
 .card-body h2 a {
-  color: var(--text);
+  color: var(--navy);
   text-decoration: none;
   transition: color 0.2s;
 }
 
-.card-body h2 a:hover { color: var(--primary); }
+.card-body h2 a:hover { color: var(--blue); }
 
 .card-body p {
-  font-size: 0.95rem;
-  color: var(--text-light);
-  line-height: 1.65;
+  font-size: 0.88rem;
+  color: var(--text-mid);
+  line-height: 1.6;
   margin-bottom: 1.2rem;
 }
 
+.card-footer {
+  padding: 0 1.5rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .read-more {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--primary);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--blue);
   text-decoration: none;
-  letter-spacing: 0.3px;
   transition: color 0.2s;
 }
 
-.read-more:hover { color: var(--accent); }
+.read-more:hover { color: var(--orange); }
 
-/* Article page */
-.article-header {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-  color: white;
-  padding: 4rem 2rem 3rem;
-  text-align: center;
+.read-time {
+  font-size: 0.75rem;
+  color: var(--text-light);
 }
 
+/* ---- Article ---- */
+.article-header {
+  background: var(--navy);
+  color: white;
+  padding: 3.5rem 2rem 3rem;
+}
+
+.article-header-inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.article-header .breadcrumb {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 1.5rem;
+}
+
+.article-header .breadcrumb a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+}
+
+.article-header .breadcrumb a:hover { color: var(--orange); }
+
 .article-header h1 {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 2.2rem;
+  font-family: 'Bitter', serif;
+  font-size: 2.1rem;
   font-weight: 700;
-  max-width: 800px;
-  margin: 0 auto 1rem;
-  letter-spacing: -0.5px;
-  line-height: 1.25;
+  line-height: 1.3;
+  margin-bottom: 1rem;
 }
 
 .article-meta {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 0.9rem;
-  opacity: 0.85;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
 }
+
+.article-meta span { display: flex; align-items: center; gap: 0.3rem; }
 
 .article-body {
   max-width: 760px;
   margin: 0 auto;
-  padding: 3rem 2rem 5rem;
+  padding: 2.5rem 2rem 4rem;
 }
 
 .article-body h2 {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 1.6rem;
+  font-family: 'Bitter', serif;
+  font-size: 1.5rem;
   font-weight: 700;
-  color: var(--primary);
-  margin: 2.5rem 0 1rem;
-  letter-spacing: -0.3px;
+  color: var(--navy);
+  margin: 2.5rem 0 0.8rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--border);
 }
 
 .article-body h3 {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 1.2rem;
+  font-family: 'Bitter', serif;
+  font-size: 1.15rem;
   font-weight: 700;
-  color: var(--text);
-  margin: 2rem 0 0.8rem;
+  color: var(--navy-light);
+  margin: 1.8rem 0 0.6rem;
 }
 
 .article-body p {
-  margin-bottom: 1.2rem;
-  font-size: 1.05rem;
+  margin-bottom: 1.1rem;
+  font-size: 1.02rem;
+  color: var(--text);
+  line-height: 1.8;
 }
 
 .article-body ul, .article-body ol {
-  margin: 1rem 0 1.5rem 1.5rem;
+  margin: 0.8rem 0 1.3rem 1.5rem;
 }
 
 .article-body li {
-  margin-bottom: 0.5rem;
-  font-size: 1.05rem;
+  margin-bottom: 0.4rem;
+  font-size: 1.02rem;
+  line-height: 1.7;
 }
 
-.article-body strong { color: var(--text); }
+.article-body strong { color: var(--navy); }
 
 .article-body blockquote {
-  border-left: 4px solid var(--accent);
-  padding: 1rem 1.5rem;
+  border-left: 3px solid var(--orange);
+  padding: 0.8rem 1.2rem;
   margin: 1.5rem 0;
-  background: rgba(200,169,81,0.06);
+  background: var(--bg-off);
   font-style: italic;
+  color: var(--text-mid);
 }
 
-.back-link {
-  display: inline-block;
-  margin-bottom: 2rem;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 0.9rem;
-  color: var(--primary);
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.back-link:hover { color: var(--accent); }
-
-.site-footer {
-  background: var(--primary);
-  color: rgba(255,255,255,0.7);
+/* ---- Footer ---- */
+.cta-bar {
+  background: var(--orange);
+  color: #fff;
   text-align: center;
   padding: 2.5rem 2rem;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 0.85rem;
-}
-
-.site-footer strong { color: white; }
-
-.cta-bar {
-  background: var(--accent);
-  color: var(--primary);
-  text-align: center;
-  padding: 2rem;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
 .cta-bar p {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+  font-family: 'Bitter', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
 }
 
 .cta-bar small {
-  font-size: 0.85rem;
-  opacity: 0.8;
+  font-size: 0.88rem;
+  opacity: 0.9;
+}
+
+.site-footer {
+  background: var(--navy);
+  color: rgba(255,255,255,0.5);
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.82rem;
+}
+
+.site-footer strong { color: #fff; }
+
+.site-footer .demo-note {
+  margin-top: 0.6rem;
+  font-size: 0.72rem;
+  opacity: 0.5;
+  font-style: italic;
 }
 
 @media (max-width: 700px) {
-  .hero h1 { font-size: 2rem; }
+  .hero h1 { font-size: 1.9rem; }
   .posts-grid { grid-template-columns: 1fr; }
   .header-inner { flex-direction: column; gap: 0.8rem; }
-  nav a { margin-left: 1rem; }
-  .article-header h1 { font-size: 1.7rem; }
+  .article-header h1 { font-size: 1.6rem; }
+  .section-title { font-size: 1.4rem; }
 }
 </style>
 </head>
 <body>
 <header class="site-header">
   <div class="header-inner">
-    <a href="index.html" class="logo">Resurgent <span>Sports Rehab</span></a>
+    <a href="index.html" class="logo">Re<span>surgent</span> Sports Rehab</a>
     <nav>
       <a href="index.html">Blog</a>
       <a href="#">About</a>
       <a href="#">Services</a>
-      <a href="#">Contact</a>
+      <a href="#" class="cta-btn">Schedule Free Consult</a>
     </nav>
   </div>
 </header>
 
 <div class="hero">
-  <div class="badge">Northern Virginia&rsquo;s Sports PT Experts</div>
+  <div class="location-tag">&#9679; Fairfax &amp; Chantilly, Virginia</div>
   <h1>The Resurgent Blog</h1>
   <p>Evidence-based insights on sports rehabilitation, injury prevention, and athletic performance from our team of board-certified Doctors of Physical Therapy.</p>
 </div>
 <div class="container">
+  <div class="section-label">Resources</div>
   <div class="section-title">Latest Articles</div>
   <div class="posts-grid">
     
 <div class="post-card">
-  <div class="card-accent"></div>
+  <div class="card-top">
+    <span class="tag">ACL graft healing</span>
+    <span class="date">2026-03-23</span>
+  </div>
   <div class="card-body">
-    <div class="card-meta">
-      <span class="tag">FAQPage</span>
-      <span>2026-03-23</span>
-      <span>7 min read</span>
-    </div>
     <h2><a href="acl-graft-healing-5-year-recovery.html">ACL Graft Healing: 5-Year Recovery Timeline & Outcomes</a></h2>
     <p>Discover what happens to your ACL graft over 5 years post-surgery. Learn about tunnel enlargement, graft maturation phases & recovery optimization.</p>
+  </div>
+  <div class="card-footer">
     <a href="acl-graft-healing-5-year-recovery.html" class="read-more">Read article &rarr;</a>
+    <span class="read-time">7 min read</span>
   </div>
 </div>
 <div class="post-card">
-  <div class="card-accent"></div>
+  <div class="card-top">
+    <span class="tag">ACL injury prevention</span>
+    <span class="date">2026-03-23</span>
+  </div>
   <div class="card-body">
-    <div class="card-meta">
-      <span class="tag">FAQPage</span>
-      <span>2026-03-23</span>
-      <span>7 min read</span>
-    </div>
     <h2><a href="acl-injury-prevention-female-athletes-risk-factors.html">ACL Injury Prevention for Female Athletes | Northern VA</a></h2>
     <p>Female athletes face 3-6x higher ACL injury risk. Our NoVA specialists deliver proven prevention programs reducing injuries 52-85%. Schedule today.</p>
+  </div>
+  <div class="card-footer">
     <a href="acl-injury-prevention-female-athletes-risk-factors.html" class="read-more">Read article &rarr;</a>
+    <span class="read-time">7 min read</span>
   </div>
 </div>
 <div class="post-card">
-  <div class="card-accent"></div>
+  <div class="card-top">
+    <span class="tag">ACL injury prevention female athletes</span>
+    <span class="date">2026-03-23</span>
+  </div>
   <div class="card-body">
-    <div class="card-meta">
-      <span class="tag">FAQPage</span>
-      <span>2026-03-23</span>
-      <span>8 min read</span>
-    </div>
     <h2><a href="acl-injury-risk-factors-female-athletes-prevention.html">ACL Injury Prevention for Female Athletes | Northern VA</a></h2>
     <p>Female athletes face 2-8x higher ACL injury rates. Learn evidence-based prevention programs that reduce risk by 85% in Northern Virginia.</p>
+  </div>
+  <div class="card-footer">
     <a href="acl-injury-risk-factors-female-athletes-prevention.html" class="read-more">Read article &rarr;</a>
+    <span class="read-time">8 min read</span>
   </div>
 </div>
 <div class="post-card">
-  <div class="card-accent"></div>
+  <div class="card-top">
+    <span class="tag">ACL reconstruction recovery timeline</span>
+    <span class="date">2026-03-23</span>
+  </div>
   <div class="card-body">
-    <div class="card-meta">
-      <span class="tag">FAQPage</span>
-      <span>2026-03-23</span>
-      <span>7 min read</span>
-    </div>
     <h2><a href="acl-reconstruction-recovery-timeline-years-2-5.html">ACL Recovery Timeline Years 2-5: What to Expect After Surgery</a></h2>
     <p>Complete ACL reconstruction recovery timeline for years 2-5: graft maturation, tunnel changes, return to sports guidelines & long-term knee health.</p>
+  </div>
+  <div class="card-footer">
     <a href="acl-reconstruction-recovery-timeline-years-2-5.html" class="read-more">Read article &rarr;</a>
+    <span class="read-time">7 min read</span>
   </div>
 </div>
 <div class="post-card">
-  <div class="card-accent"></div>
+  <div class="card-top">
+    <span class="tag">ACL recovery timeline</span>
+    <span class="date">2026-03-23</span>
+  </div>
   <div class="card-body">
-    <div class="card-meta">
-      <span class="tag">FAQPage</span>
-      <span>2026-03-23</span>
-      <span>6 min read</span>
-    </div>
     <h2><a href="acl-recovery-timeline-5-year-journey.html">ACL Recovery Timeline: 5-Year Journey Back to Sports</a></h2>
     <p>Complete ACL recovery timeline guide: 5-year journey from surgery to peak performance. Learn healing phases, graft strength, and what to expect.</p>
+  </div>
+  <div class="card-footer">
     <a href="acl-recovery-timeline-5-year-journey.html" class="read-more">Read article &rarr;</a>
+    <span class="read-time">6 min read</span>
   </div>
 </div>
 <div class="post-card">
-  <div class="card-accent"></div>
+  <div class="card-top">
+    <span class="tag">ACL physical therapy fear</span>
+    <span class="date">2026-03-23</span>
+  </div>
   <div class="card-body">
-    <div class="card-meta">
-      <span class="tag">FAQPage</span>
-      <span>2026-03-23</span>
-      <span>7 min read</span>
-    </div>
     <h2><a href="overcoming-fear-acl-surgery-physical-therapy.html">ACL Physical Therapy Fear: Proven Strategies to Build Confidence</a></h2>
     <p>Overcome ACL physical therapy fear with proven strategies. Learn how specialized rehab addresses post-surgery anxiety for confident return to sport.</p>
+  </div>
+  <div class="card-footer">
     <a href="overcoming-fear-acl-surgery-physical-therapy.html" class="read-more">Read article &rarr;</a>
+    <span class="read-time">7 min read</span>
   </div>
 </div>
 <div class="post-card">
-  <div class="card-accent"></div>
+  <div class="card-top">
+    <span class="tag">fear after ACL injury</span>
+    <span class="date">2026-03-23</span>
+  </div>
   <div class="card-body">
-    <div class="card-meta">
-      <span class="tag">FAQPage</span>
-      <span>2026-03-23</span>
-      <span>7 min read</span>
-    </div>
     <h2><a href="overcoming-fear-after-acl-injury-sports-physical-therapy.html">Fear After ACL Injury: Sports PT Mental Barrier Solutions</a></h2>
     <p>Overcome fear after ACL injury with Resurgent Sports Rehab's proven approach. Learn how sports PT addresses mental barriers in ACL rehabilitation.</p>
+  </div>
+  <div class="card-footer">
     <a href="overcoming-fear-after-acl-injury-sports-physical-therapy.html" class="read-more">Read article &rarr;</a>
+    <span class="read-time">7 min read</span>
   </div>
 </div>
   </div>
 </div>
 <div class="cta-bar">
   <p>Ready to move better, perform better, and stay in the game?</p>
-  <small>Resurgent Sports Rehab &mdash; Fairfax &amp; Chantilly, Virginia &mdash; 1-on-1 sessions with board-certified sports PTs</small>
+  <small>Schedule your free consultation &mdash; Fairfax &amp; Chantilly, Virginia</small>
 </div>
 <footer class="site-footer">
   <p><strong>Resurgent Sports Rehab</strong> &mdash; Northern Virginia&rsquo;s boutique sports physical therapy clinic</p>
-  <p style="margin-top: 0.5rem; font-size: 0.78rem; opacity: 0.6;">Demo site generated by ContentEngine &mdash; content is for review purposes only</p>
+  <p class="demo-note">Demo site &mdash; content is for editorial review purposes only</p>
 </footer>
 </body>
 </html>
