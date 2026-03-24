@@ -104,7 +104,7 @@ def run_pipeline(topic: dict[str, Any]) -> str | None:
         console.print(f"[dim]  Outline:  {o[0]:,} in / {o[1]:,} out[/dim]")
         console.print(f"[dim]  Draft:    {d[0]:,} in / {d[1]:,} out[/dim]")
         console.print(f"[dim]  SEO:      {s[0]:,} in / {s[1]:,} out[/dim]")
-        console.print(f"[dim]  {'─' * 35}[/dim]")
+        console.print(f"[dim]  {'-' * 35}[/dim]")
         console.print(f"[dim]  Total cost: ${total_cost}[/dim]")
 
         slug = outline.get("slug", "unknown")

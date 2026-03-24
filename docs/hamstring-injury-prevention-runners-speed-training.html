@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hamstring Injury Prevention: Speed Training Tips for Runners | Resurgent Sports Rehab</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&family=Raleway:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap');
+
+:root {
+  --navy: #042b4e;
+  --navy-light: #0a3d6b;
+  --orange: #eb5e28;
+  --orange-hover: #d4511f;
+  --blue: #096fc3;
+  --bg: #f8f9fb;
+  --bg-off: #eef1f5;
+  --card-bg: #ffffff;
+  --text: #1a1a2e;
+  --text-mid: #3d4555;
+  --text-light: #5a6478;
+  --border: #d8dde6;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Source Sans 3', 'Raleway', sans-serif;
+  font-weight: 500;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+}
+
+/* ---- Header ---- */
+.site-header {
+  background: #fff;
+  border-bottom: 2px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 4px rgba(4,43,78,0.06);
+}
+
+.header-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Bitter', serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--navy);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.logo span { color: var(--orange); }
+
+nav { display: flex; align-items: center; gap: 0.5rem; }
+
+nav a {
+  color: var(--navy);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+}
+
+nav a:hover { background: var(--bg-off); color: var(--blue); }
+
+nav .cta-btn {
+  background: var(--orange);
+  color: #fff;
+  padding: 0.55rem 1.2rem;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+nav .cta-btn:hover { background: var(--orange-hover); color: #fff; }
+
+/* ---- Hero ---- */
+.hero {
+  background: var(--navy);
+  color: white;
+  padding: 4.5rem 2rem 4rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-family: 'Bitter', serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.8);
+  max-width: 620px;
+  margin: 0 auto 2rem;
+  line-height: 1.75;
+}
+
+.hero .location-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--orange);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+/* ---- Content ---- */
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 3.5rem 2rem;
+}
+
+.section-label {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--blue);
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-family: 'Bitter', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 2.5rem;
+}
+
+/* ---- Posts Grid ---- */
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.8rem;
+}
+
+.post-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(4,43,78,0.04);
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+
+.post-card:hover {
+  box-shadow: 0 8px 30px rgba(4,43,78,0.12);
+  transform: translateY(-2px);
+}
+
+.card-top {
+  background: var(--navy);
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-top .tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--orange);
+}
+
+.card-top .date {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.6);
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-body h2 {
+  font-family: 'Bitter', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 0.7rem;
+  color: var(--navy);
+}
+
+.card-body h2 a {
+  color: var(--navy);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.card-body h2 a:hover { color: var(--blue); }
+
+.card-body p {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-mid);
+  line-height: 1.65;
+  margin-bottom: 1.2rem;
+}
+
+.card-footer {
+  padding: 0 1.5rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.read-more {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--blue);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.read-more:hover { color: var(--orange); }
+
+.read-time {
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+/* ---- Article ---- */
+.article-header {
+  background: var(--navy);
+  color: white;
+  padding: 3.5rem 2rem 3rem;
+}
+
+.article-header-inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.article-header .breadcrumb {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 1.5rem;
+}
+
+.article-header .breadcrumb a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+}
+
+.article-header .breadcrumb a:hover { color: var(--orange); }
+
+.article-header h1 {
+  font-family: 'Bitter', serif;
+  font-size: 2.1rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+.article-meta {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.article-meta span { display: flex; align-items: center; gap: 0.3rem; }
+
+.article-body {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+  background: var(--card-bg);
+  margin-top: -1.5rem;
+  border-radius: 8px 8px 0 0;
+  position: relative;
+  box-shadow: 0 0 20px rgba(4,43,78,0.05);
+}
+
+.article-body h2 {
+  font-family: 'Bitter', serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 2.5rem 0 0.8rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--bg-off);
+}
+
+.article-body h3 {
+  font-family: 'Bitter', serif;
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: var(--navy-light);
+  margin: 1.8rem 0 0.6rem;
+}
+
+.article-body p {
+  margin-bottom: 1.2rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--text-mid);
+  line-height: 1.85;
+}
+
+.article-body ul, .article-body ol {
+  margin: 0.8rem 0 1.3rem 1.5rem;
+}
+
+.article-body li {
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.75;
+  color: var(--text-mid);
+}
+
+.article-body strong { color: var(--navy); font-weight: 700; }
+
+.article-body blockquote {
+  border-left: 3px solid var(--orange);
+  padding: 1rem 1.4rem;
+  margin: 1.5rem 0;
+  background: var(--bg-off);
+  font-style: italic;
+  color: var(--text-mid);
+  border-radius: 0 4px 4px 0;
+}
+
+/* ---- Footer ---- */
+.cta-bar {
+  background: var(--orange);
+  color: #fff;
+  text-align: center;
+  padding: 2.5rem 2rem;
+}
+
+.cta-bar p {
+  font-family: 'Bitter', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.cta-bar small {
+  font-size: 0.88rem;
+  opacity: 0.9;
+}
+
+.site-footer {
+  background: var(--navy);
+  color: rgba(255,255,255,0.5);
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.82rem;
+}
+
+.site-footer strong { color: #fff; }
+
+.site-footer .demo-note {
+  margin-top: 0.6rem;
+  font-size: 0.72rem;
+  opacity: 0.5;
+  font-style: italic;
+}
+
+@media (max-width: 700px) {
+  .hero h1 { font-size: 1.9rem; }
+  .posts-grid { grid-template-columns: 1fr; }
+  .header-inner { flex-direction: column; gap: 0.8rem; }
+  .article-header h1 { font-size: 1.6rem; }
+  .section-title { font-size: 1.4rem; }
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">Re<span>surgent</span> Sports Rehab</a>
+    <nav>
+      <a href="index.html">Blog</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#" class="cta-btn">Schedule Free Consult</a>
+    </nav>
+  </div>
+</header>
+
+<div class="article-header">
+  <div class="article-header-inner">
+    <div class="breadcrumb"><a href="index.html">Blog</a> &nbsp;/&nbsp; hamstring injury prevention</div>
+    <h1>Hamstring Injury Prevention: Speed Training Tips for Runners</h1>
+    <div class="article-meta">
+      <span>2026-03-24</span>
+      <span>7 min read</span>
+      <span>hamstring injury prevention</span>
+    </div>
+  </div>
+</div>
+<div class="article-body">
+  <h2>Why Hamstring Injuries Spike at Higher Running Speeds</h2>
+<p>When runners push their pace, hamstring injury risk increases dramatically. This isn&rsquo;t just about fatigue—it&rsquo;s pure biomechanics. As your running speed increases, your hamstring muscles face exponentially higher forces during the critical late swing phase of your gait cycle.</p>
+<p>Research shows that hamstring muscle activation increases by up to 80% when transitioning from jogging to sprinting speeds [Schache et al., 2012]. During high-speed running, your hamstring muscles must simultaneously lengthen while contracting forcefully to decelerate your leg before foot strike. This eccentric contraction (lengthening under tension) creates peak stress on muscle fibers.</p>
+<p>The numbers tell the story clearly. At moderate running speeds (7-8 mph), hamstring strain injuries are relatively rare. But increase that pace to competitive speeds (10+ mph), and injury rates can triple [Opar et al., 2014]. Elite sprinters experience hamstring injury rates as high as 57% annually, with most injuries occurring during acceleration phases or speed work.</p>
+<p>Your hamstring group—consisting of the biceps femoris, semitendinosus, and semimembranosus muscles—must generate massive forces to control hip flexion and knee extension during fast running. When these demands exceed your muscles&rsquo; capacity, microscopic tears occur. Without proper preparation through targeted eccentric strengthening, these small tears can progress to full muscle strains that sideline runners for weeks or months.</p>
+<p>Understanding this speed-injury relationship is crucial for runners who incorporate tempo runs, intervals, or race-pace training into their programs.</p>
+<h2>The Science Behind Hamstring Stretch During Running</h2>
+<p>Your hamstring muscles work hardest during the late swing phase of running, just before your foot hits the ground. At this moment, your hip flexes while your knee extends simultaneously, creating maximum hamstring length. Think of it as stretching a rubber band while asking it to contract—that&rsquo;s exactly what happens to your hamstrings during each stride.</p>
+<p>Research using motion capture analysis reveals that hamstring muscles reach peak stretch when your thigh moves forward while your lower leg swings toward full extension [Chumanov et al., 2011]. This position occurs roughly 40-60 milliseconds before foot contact. At higher running speeds, this stretch becomes more extreme because your leg swing velocity increases dramatically.</p>
+<p>The biceps femoris—the outer hamstring muscle—experiences the greatest stretch during this phase, which explains why it&rsquo;s injured most frequently in runners. Studies show that peak hamstring length during sprinting can reach 115% of resting length, compared to just 105% during walking [Thelen et al., 2005].</p>
+<p>Your hamstrings must also coordinate complex timing patterns. They activate strongly during late swing to prepare for foot contact, then immediately switch roles to help propel you forward during stance phase. This rapid transition from eccentric (lengthening) to concentric (shortening) contraction creates additional injury risk, especially when running at speeds that challenge your neuromuscular control.</p>
+<p>Understanding these mechanics helps explain why traditional hamstring stretches and concentric strengthening alone aren&rsquo;t sufficient for injury prevention. Your muscles need specific eccentric training that mimics these high-demand running positions.</p>
+<h2>Eccentric Training: Your Best Defense Against Hamstring Strains</h2>
+<p>Eccentric training—exercises that strengthen muscles while they lengthen—represents the gold standard for hamstring injury prevention. This training method directly addresses the primary injury mechanism in runners: excessive stretch under high muscle activation.</p>
+<p>Multiple systematic reviews demonstrate that eccentric hamstring training reduces injury rates by 51-85% across various sports [Al Attar et al., 2017]. The Nordic hamstring exercise alone has been shown to reduce hamstring strain incidence by up to 70% when performed consistently [van der Horst et al., 2015].</p>
+<p>Why does eccentric training work so effectively? These exercises create specific adaptations that traditional training misses. Eccentric contractions increase muscle fascicle length—literally adding sarcomeres (contractile units) in series within your muscle fibers. This adaptation allows your hamstrings to generate force at longer muscle lengths, exactly what&rsquo;s needed during high-speed running.</p>
+<p>Eccentric training also enhances your muscles&rsquo; ability to absorb energy. During the late swing phase of running, your hamstrings must rapidly absorb the kinetic energy of your swinging leg. Muscles trained eccentrically develop superior energy absorption capacity, reducing the likelihood of tissue damage when loads suddenly increase.</p>
+<p>The neuromuscular benefits are equally important. Eccentric exercises improve intermuscular coordination between your three hamstring muscles and enhance the timing of muscle activation patterns. This improved control helps your hamstrings handle the rapid contraction-relaxation cycles required during speed work without breaking down.</p>
+<h2>Top 5 Eccentric Hamstring Exercises for Runners</h2>
+<h3>1. Nordic Hamstring Curls</h3>
+<p>Kneel with your ankles secured under a sturdy couch or have a partner hold your feet. Slowly lower your torso forward while keeping your hips extended. Use your arms to catch yourself at the bottom, then return to starting position. Begin with 3 sets of 5 reps, progressing to 3 sets of 12 over 6-8 weeks.</p>
+<h3>2. Single-Leg Romanian Deadlifts</h3>
+<p>Stand on one leg holding a dumbbell. Hinge at your hip while extending your free leg behind you, lowering the weight toward the ground. Focus on controlling the descent over 3-4 seconds. Start with bodyweight only, progressing to 15-25% of your body weight.</p>
+<h3>3. Eccentric Hamstring Slides</h3>
+<p>Lie on your back with heels on sliding discs or towels on a smooth floor. Lift your hips into a bridge position, then slowly slide your heels away from your body while maintaining the bridge. Control the slide out for 5 seconds, then use both legs to return to start. Progress to single-leg variations.</p>
+<h3>4. Razor Curls</h3>
+<p>Using a suspension trainer or stability ball, assume a plank position with feet elevated. Slowly pull your knees toward your chest by bending at the hips and knees, then control the return to plank position over 4-5 seconds. This exercise targets hamstrings in a running-specific position.</p>
+<h3>5. Stiff-Leg Deadlift Negatives</h3>
+<p>Perform a stiff-leg deadlift with emphasis on the lowering (eccentric) phase. Take 5-6 seconds to lower the weight while maintaining a neutral spine and feeling the stretch through your hamstrings. Use 70-80% of your normal deadlift weight since eccentric strength exceeds concentric strength.</p>
+<p>Perform these exercises 2-3 times per week, allowing at least 48 hours between sessions for recovery. Focus on perfect form over heavy resistance, especially during your first 4 weeks of training.</p>
+<h2>How to Progress Your Hamstring Training Safely</h2>
+<p>Hamstring eccentric training requires systematic progression to avoid overuse injuries. Your muscles adapt to eccentric loading more slowly than concentric training, making patience essential for long-term success.</p>
+<p>Start with bodyweight-only exercises during weeks 1-2, focusing on movement quality and establishing the eccentric tempo. Most runners can handle 2-3 sets of 5-8 repetitions initially. Pay attention to muscle soreness—some discomfort is normal, but sharp pain indicates excessive loading.</p>
+<p>During weeks 3-4, increase repetitions to 8-12 per set while maintaining perfect form. If you experience significant soreness lasting more than 48 hours, reduce training frequency to twice weekly. Your goal is progressive overload without overwhelming your recovery capacity.</p>
+<p>Weeks 5-8 represent the strength-building phase. Add external resistance through weights, resistance bands, or longer lever arms. Nordic hamstring curls can progress from partial range of motion to full lowering. Single-leg Romanian deadlifts can advance from bodyweight to 15-20% of body weight.</p>
+<p>Advanced runners (after 8-12 weeks of consistent training) can incorporate sport-specific variations. High-speed eccentric exercises like assisted Nordic curls using rubber bands challenge your hamstrings at velocities closer to running demands. However, these advanced techniques require careful monitoring and are best implemented under professional guidance.</p>
+<p>Monitor your response weekly. Successful progression includes improved exercise capacity without increased injury symptoms. If hamstring tightness or discomfort increases, reduce training intensity for one week before resuming progression. Remember that eccentric adaptations take 6-12 weeks to fully develop, making consistency more important than aggressive advancement.</p>
+<h2>Common Hamstring Injury Prevention FAQ</h2>
+<p><strong>Q: How often should I do eccentric hamstring exercises?</strong>
+A: Perform eccentric hamstring training 2-3 times per week with at least 48 hours between sessions. Your muscles need adequate recovery time to adapt to eccentric loading. More frequent training can lead to overuse injuries rather than improved strength.</p>
+<p><strong>Q: Can I do hamstring injury prevention exercises on the same day as speed work?</strong>
+A: Avoid intense eccentric training within 24 hours before or after high-speed running sessions. Schedule your hardest hamstring exercises on easy running days or rest days. Light activation exercises like leg swings or gentle Romanian deadlifts can be performed before speed work as part of your warm-up.</p>
+<p><strong>Q: What&rsquo;s the difference between hamstring tightness and injury risk?</strong>
+A: Hamstring &ldquo;tightness&rdquo; often reflects weakness rather than actual muscle shortness. Many runners who feel tight hamstrings actually have muscles that lack eccentric strength and endurance. Static stretching alone won&rsquo;t reduce injury risk—you need strength training that addresses the specific demands of running.</p>
+<p><strong>Q: Should I continue eccentric training if I&rsquo;m already injured?</strong>
+A: Never perform aggressive eccentric exercises during acute hamstring injuries. However, gentle eccentric loading often plays a crucial role in hamstring rehabilitation once initial healing occurs. Work with a qualified physical therapist to determine appropriate exercise modifications based on your specific injury and healing stage.</p>
+<p><strong>Q: How long does it take to see results from hamstring injury prevention training?</strong>
+A: Expect initial strength improvements within 4-6 weeks, but peak eccentric adaptations require 8-12 weeks of consistent training. Many runners notice improved confidence during speed work after 6 weeks. Remember that injury prevention is an ongoing process—benefits disappear within 4-6 weeks if training stops.</p>
+<p>At Resurgent Sports Rehab, our 3-tier run analysis protocol identifies individual hamstring injury risk factors that generic prevention programs often miss, helping Northern Virginia runners develop targeted strategies based on their specific biomechanics and training demands.</p>
+<h2>When Should You See a Sports Physical Therapist?</h2>
+<ul>
+<li>You&rsquo;ve experienced hamstring pain or tightness that persists beyond normal post-workout soreness</li>
+<li>Previous hamstring injuries keep recurring despite your prevention efforts</li>
+<li>You want to increase your running speed or training intensity but feel unprepared or concerned about injury risk</li>
+</ul>
+<p>If any of these situations apply to you, consider scheduling an evaluation at Resurgent Sports Rehab. Our board-certified physical therapists use comprehensive movement analysis to identify your individual injury risk factors and create personalized prevention strategies that go far beyond generic exercise programs.</p>
+<blockquote>
+<p><strong>Medical disclaimer:</strong> This content is for informational purposes only and does not constitute medical advice, diagnosis, or treatment. Always consult a licensed physical therapist or qualified healthcare provider before beginning any exercise or rehabilitation program. If you are experiencing pain or injury, seek professional evaluation promptly.</p>
+</blockquote>
+<h2>SOURCES</h2>
+<p>Al Attar, W. S. A., Soomro, N., Sinclair, P. J., Pappas, E., &amp; Sanders, R. H. (2017). Effect of injury prevention programs that include the Nordic hamstring exercise on hamstring injury rates in soccer players: A systematic review and meta-analysis. Sports Medicine, 47(5), 907-916. https://doi.org/10.1007/s40279-016-0638-2</p>
+<p>Chumanov, E. S., Heiderscheit, B. C., &amp; Thelen, D. G. (2011). Hamstring musculotendon dynamics during stance and swing phases of high-speed running. Medicine &amp; Science in Sports &amp; Exercise, 43(3), 525-532. https://doi.org/10.1249/MSS.0b013e3181f23fe8</p>
+<p>Opar, D. A., Williams, M. D., &amp; Shield, A. J. (2014). Hamstring strain injuries: Factors that lead to injury and re-injury. Sports Medicine, 42(3), 209-226. https://doi.org/10.2165/11594800-000000000-00000</p>
+<p>Schache, A. G., Dorn, T. W., Blanch, P. D., Brown, N. A., &amp; Pandy, M. G. (2012). Mechanics of the human hamstring muscles during sprinting. Medicine &amp; Science in Sports &amp; Exercise, 44(4), 647-658. https://doi.org/10.1249/MSS.0b013e318236a3d2</p>
+<p>Thelen, D. G., Chumanov, E. S., Hoerth, D. M., Best, T. M., Swanson, S. C., Li, L., &hellip; &amp; Heiderscheit, B. C. (2005). Hamstring muscle kinematics during treadmill sprinting. Medicine &amp; Science in Sports &amp; Exercise, 37(1), 108-114. https://doi.org/10.1249/01.MSS.0000150078.79120.C8</p>
+<p>van der Horst, N., Smits, D. W., Petersen, J., Goedhart, E. A., &amp; Backx, F. J. (2015). The preventive effect of the Nordic hamstring exercise on hamstring injuries in amateur soccer players: A randomized controlled trial. American Journal of Sports Medicine, 43(6), 1316-1323. https://doi.org/10.1177/0363546515574057</p>
+<h2>Sources</h2>
+<ul>
+<li>Original source: https://pubmed.ncbi.nlm.nih.gov/41730607/</li>
+<li>DOI: 10.1136/bjsports-2025-110847</li>
+</ul>
+</div>
+<div class="cta-bar">
+  <p>Ready to move better, perform better, and stay in the game?</p>
+  <small>Schedule your free consultation &mdash; Fairfax &amp; Chantilly, Virginia</small>
+</div>
+<footer class="site-footer">
+  <p><strong>Resurgent Sports Rehab</strong> &mdash; Northern Virginia&rsquo;s boutique sports physical therapy clinic</p>
+  <p class="demo-note">Demo site &mdash; content is for editorial review purposes only</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Achilles Tendinopathy Masters Runners: Hop Test Predictions | Resurgent Sports Rehab</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&family=Raleway:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap');
+
+:root {
+  --navy: #042b4e;
+  --navy-light: #0a3d6b;
+  --orange: #eb5e28;
+  --orange-hover: #d4511f;
+  --blue: #096fc3;
+  --bg: #f8f9fb;
+  --bg-off: #eef1f5;
+  --card-bg: #ffffff;
+  --text: #1a1a2e;
+  --text-mid: #3d4555;
+  --text-light: #5a6478;
+  --border: #d8dde6;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Source Sans 3', 'Raleway', sans-serif;
+  font-weight: 500;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+}
+
+/* ---- Header ---- */
+.site-header {
+  background: #fff;
+  border-bottom: 2px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 4px rgba(4,43,78,0.06);
+}
+
+.header-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Bitter', serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--navy);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.logo span { color: var(--orange); }
+
+nav { display: flex; align-items: center; gap: 0.5rem; }
+
+nav a {
+  color: var(--navy);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+}
+
+nav a:hover { background: var(--bg-off); color: var(--blue); }
+
+nav .cta-btn {
+  background: var(--orange);
+  color: #fff;
+  padding: 0.55rem 1.2rem;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+nav .cta-btn:hover { background: var(--orange-hover); color: #fff; }
+
+/* ---- Hero ---- */
+.hero {
+  background: var(--navy);
+  color: white;
+  padding: 4.5rem 2rem 4rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-family: 'Bitter', serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.8);
+  max-width: 620px;
+  margin: 0 auto 2rem;
+  line-height: 1.75;
+}
+
+.hero .location-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--orange);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+/* ---- Content ---- */
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 3.5rem 2rem;
+}
+
+.section-label {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--blue);
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-family: 'Bitter', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 2.5rem;
+}
+
+/* ---- Posts Grid ---- */
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.8rem;
+}
+
+.post-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(4,43,78,0.04);
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+
+.post-card:hover {
+  box-shadow: 0 8px 30px rgba(4,43,78,0.12);
+  transform: translateY(-2px);
+}
+
+.card-top {
+  background: var(--navy);
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-top .tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--orange);
+}
+
+.card-top .date {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.6);
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-body h2 {
+  font-family: 'Bitter', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 0.7rem;
+  color: var(--navy);
+}
+
+.card-body h2 a {
+  color: var(--navy);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.card-body h2 a:hover { color: var(--blue); }
+
+.card-body p {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-mid);
+  line-height: 1.65;
+  margin-bottom: 1.2rem;
+}
+
+.card-footer {
+  padding: 0 1.5rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.read-more {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--blue);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.read-more:hover { color: var(--orange); }
+
+.read-time {
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+/* ---- Article ---- */
+.article-header {
+  background: var(--navy);
+  color: white;
+  padding: 3.5rem 2rem 3rem;
+}
+
+.article-header-inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.article-header .breadcrumb {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 1.5rem;
+}
+
+.article-header .breadcrumb a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+}
+
+.article-header .breadcrumb a:hover { color: var(--orange); }
+
+.article-header h1 {
+  font-family: 'Bitter', serif;
+  font-size: 2.1rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+.article-meta {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.article-meta span { display: flex; align-items: center; gap: 0.3rem; }
+
+.article-body {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+  background: var(--card-bg);
+  margin-top: -1.5rem;
+  border-radius: 8px 8px 0 0;
+  position: relative;
+  box-shadow: 0 0 20px rgba(4,43,78,0.05);
+}
+
+.article-body h2 {
+  font-family: 'Bitter', serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 2.5rem 0 0.8rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--bg-off);
+}
+
+.article-body h3 {
+  font-family: 'Bitter', serif;
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: var(--navy-light);
+  margin: 1.8rem 0 0.6rem;
+}
+
+.article-body p {
+  margin-bottom: 1.2rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--text-mid);
+  line-height: 1.85;
+}
+
+.article-body ul, .article-body ol {
+  margin: 0.8rem 0 1.3rem 1.5rem;
+}
+
+.article-body li {
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.75;
+  color: var(--text-mid);
+}
+
+.article-body strong { color: var(--navy); font-weight: 700; }
+
+.article-body blockquote {
+  border-left: 3px solid var(--orange);
+  padding: 1rem 1.4rem;
+  margin: 1.5rem 0;
+  background: var(--bg-off);
+  font-style: italic;
+  color: var(--text-mid);
+  border-radius: 0 4px 4px 0;
+}
+
+/* ---- Footer ---- */
+.cta-bar {
+  background: var(--orange);
+  color: #fff;
+  text-align: center;
+  padding: 2.5rem 2rem;
+}
+
+.cta-bar p {
+  font-family: 'Bitter', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.cta-bar small {
+  font-size: 0.88rem;
+  opacity: 0.9;
+}
+
+.site-footer {
+  background: var(--navy);
+  color: rgba(255,255,255,0.5);
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.82rem;
+}
+
+.site-footer strong { color: #fff; }
+
+.site-footer .demo-note {
+  margin-top: 0.6rem;
+  font-size: 0.72rem;
+  opacity: 0.5;
+  font-style: italic;
+}
+
+@media (max-width: 700px) {
+  .hero h1 { font-size: 1.9rem; }
+  .posts-grid { grid-template-columns: 1fr; }
+  .header-inner { flex-direction: column; gap: 0.8rem; }
+  .article-header h1 { font-size: 1.6rem; }
+  .section-title { font-size: 1.4rem; }
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">Re<span>surgent</span> Sports Rehab</a>
+    <nav>
+      <a href="index.html">Blog</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#" class="cta-btn">Schedule Free Consult</a>
+    </nav>
+  </div>
+</header>
+
+<div class="article-header">
+  <div class="article-header-inner">
+    <div class="breadcrumb"><a href="index.html">Blog</a> &nbsp;/&nbsp; achilles tendinopathy masters runners</div>
+    <h1>Achilles Tendinopathy Masters Runners: Hop Test Predictions</h1>
+    <div class="article-meta">
+      <span>2026-03-24</span>
+      <span>7 min read</span>
+      <span>achilles tendinopathy masters runners</span>
+    </div>
+  </div>
+</div>
+<div class="article-body">
+  <h2>What Is Achilles Tendinopathy and Why Do Masters Runners Get It?</h2>
+<p>Achilles tendinopathy is a painful condition where the Achilles tendon — the thick rope-like structure connecting your calf muscles to your heel bone — becomes irritated, swollen, and weakened. Unlike an acute injury that happens suddenly, tendinopathy develops gradually as repetitive stress overwhelms the tendon&rsquo;s ability to repair itself.</p>
+<p>Masters runners (typically athletes over 35-40) face unique challenges that make them particularly susceptible to Achilles problems. As we age, our tendons naturally lose some of their elasticity and blood supply, making them slower to adapt to training loads [Cook &amp; Purdam, 2009]. This creates a perfect storm when combined with the repetitive nature of running, where your Achilles tendon must absorb forces up to 8-10 times your body weight with each foot strike.</p>
+<p>The condition often starts as morning stiffness or mild discomfort that &ldquo;warms up&rdquo; during activity. Left untreated, it can progress to persistent pain that limits training and daily activities. Understanding why masters runners develop this condition is the first step toward effective prevention and treatment strategies.</p>
+<h2>The Connection Between Single-Leg Hopping and Running Performance</h2>
+<p>Single-leg hop tests might seem simple, but they reveal critical information about how your body generates and absorbs force — the same mechanisms essential for efficient running. When you hop on one leg, your Achilles tendon and calf muscles must rapidly store and release elastic energy, similar to the spring-like action that occurs during each running stride.</p>
+<p>Research shows that runners with Achilles tendinopathy demonstrate altered hop mechanics compared to healthy runners [Habets et al., 2017]. These changes often mirror the compensatory movement patterns that develop during running, making hop tests valuable predictors of running performance and injury risk.</p>
+<p>The test challenges your neuromuscular system&rsquo;s ability to coordinate movement, maintain stability, and generate power through the affected limb. Masters runners with Achilles tendinopathy typically show reduced hop distance, altered landing mechanics, and decreased power output on the affected side. These deficits translate directly to running performance, affecting stride length, ground contact time, and energy efficiency.</p>
+<p>Physical therapists can identify subtle movement compensations during hop testing that might not be apparent during walking or even slow jogging. This makes the single-leg hop test a sensitive screening tool for detecting functional deficits before they manifest as more significant performance limitations or secondary injuries.</p>
+<h2>How Physical Therapists Use Hop Tests to Assess Running Readiness</h2>
+<p>Sports physical therapists incorporate single-leg hop testing as part of comprehensive movement assessments to determine when runners can safely return to training after Achilles tendinopathy. The test provides objective data about lower limb function that complements other clinical measures like pain levels and range of motion.</p>
+<p>During assessment, we evaluate multiple factors: hop distance, landing quality, symmetry between legs, and any pain or discomfort during the test. A common benchmark is achieving at least 90% of the unaffected limb&rsquo;s performance before clearing athletes for unrestricted running activities.</p>
+<p>At Resurgent Sports Rehab, our board-certified specialists integrate hop testing into our comprehensive 3-tier run analysis protocol. This systematic approach examines movement patterns at multiple levels — from basic single-leg stability through complex running mechanics — ensuring we identify all potential risk factors before they become performance-limiting injuries.</p>
+<p>The hop test also serves as a powerful feedback tool during rehabilitation. As tendon health improves and movement patterns normalize, hop performance typically improves in parallel. This gives both therapist and patient objective evidence that treatment is working and helps guide progression through different phases of recovery.</p>
+<h2>Key Differences Between Healthy and Injured Masters Runners</h2>
+<p>Recent research examining masters runners with and without Achilles tendinopathy reveals several key performance differences during single-leg hop testing [Tenforde et al., 2023]. Understanding these differences helps explain why some runners develop problems while others remain injury-free despite similar training loads.</p>
+<p>Masters runners with Achilles tendinopathy consistently demonstrate reduced hop distances, often showing 10-15% deficits compared to their unaffected limb and to age-matched healthy controls. More importantly, they exhibit altered landing strategies, typically landing with less ankle dorsiflexion (upward foot movement) and increased knee flexion to compensate for reduced Achilles tendon function.</p>
+<p>The injured group also shows decreased rate of force development — meaning they take longer to generate peak power during the push-off phase of hopping. This translates to reduced running economy and increased energy expenditure during distance running, partially explaining why many runners with Achilles tendinopathy report feeling like they&rsquo;re &ldquo;working harder&rdquo; to maintain their usual paces.</p>
+<p>Perhaps most significantly, masters runners with Achilles tendinopathy demonstrate greater asymmetry between limbs during functional tasks. While some degree of left-right difference is normal, asymmetries exceeding 10-15% often indicate underlying dysfunction that predisposes runners to injury and limits optimal performance.</p>
+<h2>FAQ: Single-Leg Hop Testing for Achilles Tendinopathy</h2>
+<p><strong>How far should I be able to hop on one leg?</strong>
+Healthy masters runners typically achieve hop distances of 120-150% of their height, though this varies based on individual factors like training history and body composition. More important than absolute distance is symmetry between legs — differences exceeding 10% warrant further evaluation.</p>
+<p><strong>Can I do hop tests at home to monitor my Achilles health?</strong>
+While basic hop testing can provide general feedback, proper assessment requires trained evaluation of landing mechanics, force generation, and pain response. Self-testing may miss subtle compensations that indicate increased injury risk.</p>
+<p><strong>When should I be concerned about hop test performance?</strong>
+Red flags include: noticeable differences between legs, pain during or after hopping, inability to stick the landing without losing balance, or significant decreases in performance compared to previous testing.</p>
+<p><strong>How often should runners with Achilles problems be tested?</strong>
+During active rehabilitation, monthly testing helps track progress and guide treatment modifications. Once symptoms resolve, quarterly assessments can help identify early signs of recurrence, especially during periods of increased training load.</p>
+<p><strong>Do hop test results predict my ability to return to competitive running?</strong>
+Research suggests that achieving 90% of unaffected limb performance, combined with pain-free hopping, correlates with successful return to running. However, hop testing should be part of a comprehensive assessment that includes running-specific movement analysis and gradual load progression.</p>
+<h2>What This Means for Your Training and Recovery</h2>
+<p>Understanding the relationship between hop test performance and running ability empowers masters runners to make informed decisions about training progression and injury prevention. If you&rsquo;re currently dealing with Achilles tendinopathy, focus on systematic rehabilitation that addresses both tissue healing and movement quality restoration.</p>
+<p>For injury prevention, incorporate single-leg exercises that challenge the same movement patterns assessed in hop testing. Exercises like single-leg calf raises, bounds, and controlled landings help maintain the neuromuscular qualities essential for efficient running mechanics.</p>
+<p>Masters runners should also recognize that age-related changes in tendon properties require more strategic training approaches. This includes adequate recovery between hard sessions, progressive load increases, and attention to movement quality rather than just training volume.</p>
+<p>The key takeaway is that hop testing provides valuable insights into your functional capacity that traditional measures like pain scales or flexibility tests might miss. Regular assessment can help identify problems early when they&rsquo;re most responsive to conservative treatment, preventing minor issues from becoming season-ending injuries that require extended time away from the sport you love.</p>
+<h2>When Should You See a Sports Physical Therapist?</h2>
+<p>• You notice decreased hop distance, altered landing mechanics, or pain during single-leg activities
+• Achilles stiffness or discomfort persists beyond the typical &ldquo;warm-up period&rdquo; during runs
+• Your running performance has declined without explanation, especially if accompanied by lower leg discomfort</p>
+<p>If you&rsquo;re experiencing any of these signs, consider scheduling a comprehensive movement assessment with our team at Resurgent Sports Rehab. Our board-certified specialists use evidence-based testing protocols to identify the root causes of Achilles problems before they limit your running goals.</p>
+<blockquote>
+<p><strong>Medical disclaimer:</strong> This content is for informational purposes only and does not constitute medical advice, diagnosis, or treatment. Always consult a licensed physical therapist or qualified healthcare provider before beginning any exercise or rehabilitation program. If you are experiencing pain or injury, seek professional evaluation promptly.</p>
+</blockquote>
+<p><strong>SOURCES:</strong></p>
+<p>Cook, J. L., &amp; Purdam, C. R. (2009). Is tendon pathology a continuum? A pathology model to explain the clinical presentation of load-induced tendinopathy. British Journal of Sports Medicine, 43(6), 409-416. DOI: 10.1136/bjsm.2008.051193</p>
+<p>Habets, B., van Cingel, R. E., Backx, F. J., &amp; van Elten, H. J. (2017). Single-leg hop tests in athletes with and without Achilles tendinopathy. Clinical Journal of Sport Medicine, 27(6), 551-557. DOI: 10.1097/JSM.0000000000000401</p>
+<p>Tenforde, A. S., et al. (2023). Single-leg hop performance in masters runners with Achilles tendinopathy: Implications for running performance assessment. PubMed ID: 41655366. https://pubmed.ncbi.nlm.nih.gov/41655366/</p>
+<h2>Sources</h2>
+<ul>
+<li>Original source: https://pubmed.ncbi.nlm.nih.gov/41655366/</li>
+<li>DOI: 10.1016/j.ptsp.2026.101895</li>
+</ul>
+</div>
+<div class="cta-bar">
+  <p>Ready to move better, perform better, and stay in the game?</p>
+  <small>Schedule your free consultation &mdash; Fairfax &amp; Chantilly, Virginia</small>
+</div>
+<footer class="site-footer">
+  <p><strong>Resurgent Sports Rehab</strong> &mdash; Northern Virginia&rsquo;s boutique sports physical therapy clinic</p>
+  <p class="demo-note">Demo site &mdash; content is for editorial review purposes only</p>
+</footer>
+</body>
+</html>
