@@ -1,0 +1,10 @@
+.venv/
+.env
+__pycache__/
+*.pyc
+db/raw_topics.json
+db/scored_queue.json
+logs/
+drafts/*.md
+!drafts/.gitkeep
+.claude/

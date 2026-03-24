@@ -1,0 +1,11 @@
+anthropic
+pytrends
+newspaper3k
+feedparser
+requests
+pyyaml
+python-dotenv
+rich
+click
+lxml
+lxml_html_clean

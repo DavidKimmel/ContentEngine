@@ -1,0 +1,59 @@
+clinic:
+  name: Resurgent Sports Rehab
+  location: Northern Virginia (Fairfax & Chantilly)
+  model: Out-of-network boutique sports PT
+  differentiators:
+    - MVI baseball movement analysis framework
+    - 3-tier run analysis protocol
+    - ACL prevention program with 52-85% injury reduction outcomes
+    - 8 board-certified DPTs (SCS/OCS/ATC/CSCS)
+    - Perfect 5.0 star rating across 128 reviews
+    - 1-on-1 sessions only, never PTAs or rotating staff
+  target_audience: Athletes, active adults, parents of youth athletes in NoVA
+  tone: Warm, authoritative, empowering — expert clinician talking to a smart patient
+
+pt_keywords:
+  - physical therapy Northern Virginia
+  - sports physical therapy Fairfax VA
+  - ACL rehabilitation Fairfax
+  - running injury physical therapy NoVA
+  - dry needling Northern Virginia
+  - return to sport testing
+  - baseball physical therapy Fairfax
+  - out of network physical therapy
+  - sports rehab Chantilly VA
+  - movement analysis physical therapy
+  - ACL prevention program
+  - Precision Athlete program PT
+
+competitor_sitemaps:
+  - https://rehab2perform.com/sitemap.xml
+  - https://thejacksonclinics.com/sitemap.xml
+  - https://www.ace-pt.org/sitemap.xml
+
+content_gaps:
+  - ACL injury prevention and rehabilitation
+  - Running injury diagnosis and treatment
+  - Baseball-specific injury prevention (MVI framework)
+  - Return-to-sport testing protocols
+  - Out-of-network PT value explanation
+  - Sports PT vs general PT differences
+  - In-network vs out-of-network PT explainer
+  - Precision Athlete performance program
+  - Dry needling for athletes
+  - Video gait and movement analysis
+
+priority_pages:
+  - Baseball Physical Therapy & Injury Prevention | Fairfax VA
+  - Running Injury Physical Therapy | Northern Virginia
+  - ACL Injury Prevention & Rehab | Fairfax & Chantilly
+  - What is Return-to-Sport Testing?
+  - Sports PT vs General PT — Why It Matters
+  - In-Network vs Out-of-Network PT — What Athletes Should Know
+  - How to Choose a Sports Physical Therapist in Northern Virginia
+
+settings:
+  max_results_per_source: 20
+  output_dir: drafts
+  min_score_to_generate: 60.0
+  posts_per_run: 3
